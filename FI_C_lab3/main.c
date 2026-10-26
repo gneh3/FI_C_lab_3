@@ -14,11 +14,11 @@
 
 int main(void)
 {
-	int a[MAX_N][MAX_N];
+	int** a;
 	int n;
 	int number = 1;
 
-	while (read_matrix(a, &n))
+	while ((a = read_matrix(&n)) != NULL)
 	{
 		printf("matrix %d %dx%d:\n", number, n, n);
 		print_matrix(a, n, n);
@@ -30,6 +30,7 @@ int main(void)
 		printf("without duplicate cols %dx%d:\n", n, cols);
 		print_matrix(a, n, cols);
 
+		free_matrix(a, n);
 		printf("\n");
 		number++;
 	}

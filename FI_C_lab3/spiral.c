@@ -2,7 +2,7 @@
 #include "spiral.h"
 
 // k - номер кольца
-void print_spiral(int a[MAX_N][MAX_N], int n)
+void print_spiral(int** a, int n)
 {
 	for (int k = 0; k < (n + 1) / 2; k++)
 	{

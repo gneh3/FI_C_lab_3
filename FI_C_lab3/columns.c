@@ -1,6 +1,6 @@
 #include "columns.h"
 
-int columns_equal(int a[MAX_N][MAX_N], int rows, int c1, int c2)
+int columns_equal(int** a, int rows, int c1, int c2)
 {
 	for (int i = 0; i < rows; i++)
 		if (a[i][c1] != a[i][c2])
@@ -9,7 +9,7 @@ int columns_equal(int a[MAX_N][MAX_N], int rows, int c1, int c2)
 	return 1;
 }
 
-void delete_column(int a[MAX_N][MAX_N], int rows, int cols, int c)
+void delete_column(int** a, int rows, int cols, int c)
 {
 	for (int i = 0; i < rows; i++)
 		for (int j = c; j < cols - 1; j++)
@@ -17,7 +17,7 @@ void delete_column(int a[MAX_N][MAX_N], int rows, int cols, int c)
 }
 
 // возвращает новое число столбцов
-int remove_duplicate_columns(int a[MAX_N][MAX_N], int n)
+int remove_duplicate_columns(int** a, int n)
 {
 	int cols = n;
 
